@@ -30,4 +30,22 @@ void loop() {
   Serial.println(sensorTemp);
   Serial.print("Humidity: ");
   Serial.println(sensorHumid);
+
+  if (sensorTemp < 26) {
+    digitalWrite(4, HIGH);
+    digitalWrite(3, LOW);
+    digitalWrite(2, LOW);
+  }
+
+   if (sensorTemp > 26 && sensorTemp < 28) {
+    digitalWrite(4, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(2, LOW);
+  }
+
+  else {
+     digitalWrite(4, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
+  }
 }
